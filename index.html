@@ -1,63 +1,111 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Reporte SMA</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Reporte de Cierre SMA</title>
 
   <link rel="manifest" href="manifest.webmanifest">
-  <link rel="icon" href="logo-sma.png">
+  <meta name="theme-color" content="#000000">
 
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
       min-height: 100vh;
+      background: #000000;
+      color: #ffffff;
+      font-family: Arial, Helvetica, sans-serif;
       display: flex;
-      align-items: center;
       justify-content: center;
-      background: #000;
-      font-family: Arial, sans-serif;
-      color: white;
-    }
-
-    main {
+      align-items: center;
       text-align: center;
-      padding: 30px;
     }
 
-    img {
-      width: 190px;
-      max-width: 70vw;
-      margin-bottom: 25px;
+    .contenedor {
+      width: 100%;
+      max-width: 520px;
+      padding: 30px 24px;
+    }
+
+    .logo {
+      width: 290px;
+      max-width: 85%;
+      height: auto;
+      margin-bottom: 28px;
     }
 
     h1 {
-      margin: 0 0 28px;
-      font-size: 2rem;
+      margin: 0 0 34px;
+      font-size: 38px;
+      line-height: 1.15;
     }
 
-    a {
+    .boton {
       display: inline-block;
-      padding: 16px 30px;
-      border-radius: 12px;
-      background: white;
-      color: black;
-      font-weight: bold;
+      min-width: 200px;
+      padding: 18px 28px;
+      border-radius: 16px;
+      background: #165acb;
+      color: #ffffff;
       text-decoration: none;
-      font-size: 1.1rem;
+      font-size: 21px;
+      font-weight: bold;
+      letter-spacing: 1px;
+      box-shadow: 0 6px 18px rgba(22, 90, 203, 0.35);
+      transition: transform 0.12s ease, box-shadow 0.12s ease;
+    }
+
+    .boton:active {
+      transform: scale(0.96);
+      box-shadow: 0 2px 8px rgba(22, 90, 203, 0.30);
+    }
+
+    .version {
+      margin-top: 22px;
+      font-size: 13px;
+      color: #a9a9a9;
+      letter-spacing: 0.5px;
+    }
+
+    @media (max-width: 600px) {
+      .logo {
+        width: 240px;
+      }
+
+      h1 {
+        font-size: 30px;
+      }
+
+      .boton {
+        min-width: 190px;
+        font-size: 19px;
+      }
     }
   </style>
 </head>
 
 <body>
-  <main>
-    <img src="logo-sma.png" alt="SMA Seguridad">
+  <main class="contenedor">
+    <img src="logo-sma.png" alt="SMA Seguridad" class="logo">
 
     <h1>Reporte de Cierre SMA</h1>
 
-    <a href="https://forms.cloud.microsoft/r/cjuBqcxak5">
+    <a class="boton" href="https://forms.cloud.microsoft/r/cjuBqcxak5">
       INGRESAR
     </a>
+
+    <div class="version">SMA Security · Versión Piloto 1.0</div>
   </main>
+
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("service-worker.js");
+    }
+  </script>
 </body>
 </html>
